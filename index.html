@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>স্বাদের ঘর | খাবার অর্ডার করুন</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="extras.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="#home"><span>স্বাদের</span> ঘর</a>
+      <nav><a href="#menu">মেনু</a><a href="#about">আমাদের কথা</a><a href="#contact">যোগাযোগ</a></nav>
+      <button class="cart-button" id="open-cart" aria-label="কার্ট খুলুন">কার্ট <span id="cart-count">0</span></button>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">ঘরোয়া স্বাদ, আপনার দরজায়</p>
+          <h1>প্রতিদিনের খাবার,<br /><em>একটু বেশি ভালোবাসা।</em></h1>
+          <p class="subtitle">তাজা উপকরণে তৈরি প্রিয় সব খাবার। আজই অর্ডার করুন, গরম গরম পৌঁছে যাবে আপনার কাছে।</p>
+          <a class="primary-button" href="#menu">মেনু দেখুন <span>→</span></a>
+          <div class="hero-notes"><span>★ ৪.৯/৫ রেটিং</span><span>•</span><span>৩০–৪৫ মিনিটে ডেলিভারি</span></div>
+        </div>
+        <div class="hero-art"><div class="plate"><span>🍛</span></div><div class="float-tag tag-one">তাজা ও সুস্বাদু</div><div class="float-tag tag-two">আজকের বিশেষ</div></div>
+      </section>
+
+      <section class="categories" aria-label="ক্যাটাগরি">
+        <button class="category active" data-category="সব">সব <span>🍽️</span></button>
+        <button class="category" data-category="ভাত">ভাত <span>🍚</span></button>
+        <button class="category" data-category="নাস্তা">নাস্তা <span>🥪</span></button>
+        <button class="category" data-category="মিষ্টি">মিষ্টি <span>🍮</span></button>
+        <button class="category" data-category="পানীয়">পানীয় <span>🧃</span></button>
+      </section>
+
+      <section class="menu-section" id="menu">
+        <div class="section-heading"><div><p class="eyebrow">আমাদের মেনু</p><h2>আপনার পছন্দের খাবার</h2></div><p>প্রতিটি খাবার তৈরি হয় অর্ডার পাওয়ার পর।</p></div>
+        <label class="search-box" for="food-search"><span>⌕</span><input id="food-search" type="search" placeholder="আপনার পছন্দের খাবার খুঁজুন" /></label>
+        <div class="products" id="products"></div>
+      </section>
+
+      <section class="about" id="about"><div class="about-icon">♥</div><div><p class="eyebrow">স্বাদের প্রতিশ্রুতি</p><h2>ভালো খাবার মানেই ভালো দিন</h2><p>ঘরের পরিচ্ছন্নতা ও আন্তরিকতা নিয়ে আমরা বানাই প্রতিটি পদ। আপনার পরিবারের খাবারের টেবিলকে আরও আনন্দময় করাই আমাদের লক্ষ্য।</p></div></section>
+    </main>
+
+    <footer id="contact"><div class="logo"><span>স্বাদের</span> ঘর</div><p>অর্ডারের জন্য কল করুন: <strong>০১XXXXXXXXX</strong></p><p class="footer-small">© ২০২৬ স্বাদের ঘর। ভালোবাসা দিয়ে তৈরি।</p></footer>
+
+    <aside class="cart-panel" id="cart-panel" aria-hidden="true"><div class="cart-header"><h2>আপনার কার্ট</h2><button id="close-cart" aria-label="বন্ধ করুন">×</button></div><div id="cart-items" class="cart-items"><p class="empty">আপনার কার্ট এখনো খালি।</p></div><div class="cart-footer"><div><span>মোট</span><strong id="cart-total">৳০</strong></div><button id="checkout" class="primary-button">অর্ডার করতে এগিয়ে যান</button></div></aside>
+    <div class="overlay" id="overlay"></div>
+    <section class="order-modal" id="order-modal" aria-hidden="true" aria-label="অর্ডার ফর্ম"><form id="order-form"><div class="cart-header"><h2>ডেলিভারির তথ্য</h2><button type="button" id="close-order" aria-label="বন্ধ করুন">×</button></div><p class="form-intro">আপনার তথ্য দিন। আমরা অর্ডার নিশ্চিত করতে ফোন করব।</p><label>আপনার নাম<input name="name" required placeholder="নাম লিখুন" /></label><label>মোবাইল নম্বর<input name="phone" required inputmode="numeric" pattern="01[0-9]{9}" placeholder="01XXXXXXXXX" /></label><label>ডেলিভারির ঠিকানা<textarea name="address" required rows="3" placeholder="বাসা/রোড/এলাকা লিখুন"></textarea></label><label>বিশেষ নির্দেশনা (ঐচ্ছিক)<textarea name="note" rows="2" placeholder="যেমন: ঝাল কম, ডেলিভারির সময়"></textarea></label><div class="order-total">অর্ডারের মোট <strong id="order-total">৳০</strong></div><button class="primary-button" type="submit">অর্ডার নিশ্চিত করুন</button></form></section>
+    <div class="toast" id="toast">কার্টে যোগ করা হয়েছে</div>
+    <script src="script.js"></script>
+  </body>
+</html>
